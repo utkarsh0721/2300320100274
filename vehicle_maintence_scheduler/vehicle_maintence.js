@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 
 function scheduleMaintenance(budget, tasks) {
     const n = tasks.length;
@@ -36,7 +38,7 @@ function scheduleMaintenance(budget, tasks) {
 
 async function runScheduler() {
     try {
-        const myToken ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiJ1dGthcnNoc2hhcm1hMDcyMUBnbWFpbC5jb20iLCJleHAiOjE3ODA5ODc5NTksImlhdCI6MTc4MDk4NzA1OSwiaXNzIjoiQWZmb3JkIE1lZGljYWwgVGVjaG5vbG9naWVzIFByaXZhdGUgTGltaXRlZCIsImp0aSI6IjdjMWZmM2EzLTY1ZjktNDVhNy1iNDlmLTA2YTBlMTA4MTI0MCIsImxvY2FsZSI6ImVuLUlOIiwibmFtZSI6InV0a2Fyc2giLCJzdWIiOiI4NjRmZjZiMS0xMjc5LTRmNGYtOTQ0Yi0xMTllZjk3OGUzN2EifSwiZW1haWwiOiJ1dGthcnNoc2hhcm1hMDcyMUBnbWFpbC5jb20iLCJuYW1lIjoidXRrYXJzaCIsInJvbGxObyI6IjIzMDAzMjAxMDAyNzQiLCJhY2Nlc3NDb2RlIjoiY1h1cWh0IiwiY2xpZW50SUQiOiI4NjRmZjZiMS0xMjc5LTRmNGYtOTQ0Yi0xMTllZjk3OGUzN2EiLCJjbGllbnRTZWNyZXQiOiJSSERKTkt6VEpEd01nak5HIn0.gc8mxm4dSBniHhLMawNgvilZvI0WRSRTO1RhYyVZorY";
+        const myToken = process.env.API_AUTH_TOKEN;
         const requestOptions = {
             method: 'GET',
             headers: {
